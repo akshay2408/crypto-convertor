@@ -21,9 +21,10 @@ const CryptoConvertor = (props: CryptoProps) => {
   const [budsValues, setBudsValues] = useState<number | undefined>(undefined);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const x = Number(event.target.value);
-    setValues(x || undefined);
-    setBudsValues(x * 3);
+    const nepValue = Number(event.target.value);
+    const nepValueFixed = Number(nepValue.toFixed(2))
+    setValues(nepValueFixed || undefined);
+    setBudsValues(nepValueFixed * 3);
   };
 
   const { buttonHandler, showCryptoModal, closeModal, login, logout, showResponseModal, isConnected, balance, chainId,
